@@ -1,42 +1,41 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor:url('@/../../../public/assets/curser.png')5 5,auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width:10px; /* Width of the scrollbar */
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #035db8; /* Dark blue color */
+  border-radius: 6px; /* Optional: rounded edges */
+  cursor:grabbing;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Light gray background for the track */
+  border-radius: 6px; /* Optional: rounded edges */
+}
+
+::-webkit-scrollbar-button {
+  display: none; /* Hides the scrollbar arrows */
+}
+
+
+@media (max-width:991px) {
+ /* Custom Scrollbar */
+::-webkit-scrollbar {
+  width:0px; /* Width of the scrollbar */
+
+} 
 }
