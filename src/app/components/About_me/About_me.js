@@ -18,7 +18,7 @@ const About_me = () => {
           </div>
           <div className={styles.content}>
             <p>
-            I am a skilled React Developer with over a year of freelance experience, specializing in dynamic, responsive web applications. Proficient in React.js, JavaScript (ES6+), HTML5, CSS3, and MySQL, I am also familiar with Python. I have experience building full-stack solutions and optimizing both front-end and back-end performance. Recently, I developed my portfolio using Next.js, showcasing my ability to build fast, SEO-friendly, and scalable applications.
+            I am a skilled React Developer with 1 year of experience, specializing in dynamic, responsive web applications. Proficient in React.js, JavaScript (ES6+), HTML5, CSS3, and MySQL, I am also familiar with Python. I have experience building full-stack solutions and optimizing both front-end and back-end performance. Recently, I developed my portfolio using Next.js, showcasing my ability to build fast, SEO-friendly, and scalable applications.
             </p>
           </div>
           <div className={styles.education}>
@@ -38,6 +38,17 @@ const About_me = () => {
               </ul>
             </div>
           </div>
+          <div className={styles.exprience}>
+            <h1>Experience</h1>
+            <div className={styles.items}>
+            <h2>Web Developer</h2>
+            <h3>Cuckoo images - chennai | 1 Year of Experience</h3>
+          </div>
+            <div className={styles.items}>
+            <h2>Web Developer</h2>
+            <h3>Cloudstier Solutions Private Limited - Tirupattur | Present </h3>
+          </div>
+        </div>
         </div>
       </div>
     </div>
