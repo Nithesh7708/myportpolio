@@ -1,517 +1,385 @@
-.About_me_container {
-  width: 100vw;
-  height:100%;
-  min-height:100vh;
-  display: flex;
+/* ========================================
+   ABOUT ME SECTION - PROFESSIONAL & CLEAN
+   ======================================== */
+
+.about_section {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
   position: relative;
+}
+
+.About_me_container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0px 0px 0px;
-  z-index: 1;
-  overflow: hidden;
-  background: #092129;
-}
-.About_me_container::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: url("@/../../../../../../public/assets/about/about_bg.jpg");
-  background-size: cover;
-  opacity: 0.3;
-}
-.About_me_container .About_me {
-  width: 100%;
-  height:100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.About_me_container .About_me .left {
-  width: 40%;
-  height:70vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: start;
-}
-
-.About_me_container .About_me .left img {
-  width: 450px;
-  height: auto;
-  margin-top: 30px;
-  position: absolute;
-  bottom: 0;
-}
-
-.About_me_container .About_me .right {
-  width: 50%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 10px 0px;
-  gap: 16px;
-}
-
-.About_me_container .About_me .right h1 {
-  color: white;
-  font-size: 50px;
-  text-transform: capitalize;
-}
-
-.About_me_container .About_me .right .content p {
-  color: rgba(255, 255, 255, 0.818);
-  font-size: 20px;
-  line-height: 26px;
-  margin: 0px 50px 0px 0px;
-  text-align: justify;
-}
-
-.About_me_container .About_me .right .education {
-  width: auto;
-  height: auto;
-  border: #0a9fe9 1px solid;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.778);
-  border-radius: 10px;
-  filter: drop-shadow(1px 1px 2px #0a9fe9);
-  transition: all 0.2s ease-in-out;
-  margin-top: 60px;
-}
-.About_me_container .About_me .right .education:hover {
-  filter: drop-shadow(2px 2px 99px #0a9fe9) brightness(110%);
-}
-.About_me_container .About_me .right .education h1 {
-  font-size: 28px;
-  color: #092129;
-  margin-bottom: 10px;
-}
-
-.About_me_container .About_me .right .education .items {
-  padding: 0px 20px;
-}
-
-.About_me_container .About_me .right .education .items ul {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-}
-
-.About_me_container .About_me .right .education .items ul li {
-  color: #092129;
-  font-size: 18px;
-  list-style: square;
-}
-
-.About_me_container .About_me .right .exprience{
-  width: auto;
-  height: auto;
-  border: #0a9fe9 1px solid;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.778);
-  border-radius: 10px;
-  filter: drop-shadow(1px 1px 2px #0a9fe9);
-  transition: all 0.2s ease-in-out;
-  margin-top: 5px;
-
-}
-
-.About_me_container .About_me .right .exprience h1 {
-  font-size: 28px;
-  color: #092129;
-  margin-bottom: 10px;
-}
-
-
-.About_me_container .About_me .right .exprience .items {
-  padding: 0px 20px;
-  margin: 14px 0px;
+  padding: 80px 24px;
   position: relative;
 }
 
-.About_me_container .About_me .right .exprience .items::after{
-  position: absolute;
-  content:'';
+.About_me {
   width: 100%;
-  height: 1.4px;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ========== LEFT SIDE - IMAGE ========== */
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.left img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  position: relative;
+}
+
+/* ========== RIGHT SIDE - CONTENT ========== */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.heading h1 {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ========== EDUCATION CARD ========== */
+.education {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.education::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-card);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.education:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-500);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.education:hover::before {
+  opacity: 1;
+}
+
+.education h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 16px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.education h1::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.education .items {
+  position: relative;
+  z-index: 1;
+}
+
+.education .items ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.education .items ul li {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+}
+
+.education .items ul li::before {
+  content: '▪';
+  position: absolute;
   left: 0;
-  background: #0765949c;
+  color: var(--color-accent-500);
+  font-size: 20px;
 }
 
-.About_me_container .About_me .right .exprience .items h2{
-color: #076594;
-  font-size:20px;
-  margin: 5px 0px;
+.education .items ul li strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
 }
 
-.About_me_container .About_me .right .exprience .items h3{
-color: #0e0e0f;
-  font-size:16px;
-  margin: 5px 0px;
+/* ========== EXPERIENCE CARD ========== */
+.exprience {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
+.exprience::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-card);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
 
+.exprience:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-secondary-500);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+}
 
+.exprience:hover::before {
+  opacity: 1;
+}
 
-/* Common styles for all devices */
+.exprience h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-/* Small mobile devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
+.exprience h1::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
 
+.exprience .items {
+  padding: 16px 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--color-border-secondary);
+  transition: all 0.3s;
+}
+
+.exprience .items:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.exprience .items:hover {
+  padding-left: 12px;
+}
+
+.exprience .items h2 {
+  color: var(--color-accent-500);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.exprience .items h3 {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 991px) {
   .About_me_container {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    padding:60px 0px 0px 0px;
-    z-index: 1;
+    padding: 60px 20px;
   }
 
-  .About_me_container .About_me {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-  }
-  .About_me_container .About_me .left {
-    height: auto;
-    width: 100%;
+  .About_me {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 
-  .About_me_container .About_me .left img {
-    max-width: 290px;
-    height: auto;
-    width: 80%;
-    position: static;
+  .left {
+    order: 2;
   }
 
-  .About_me_container .About_me .right {
-    width: 95%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .right {
+    order: 1;
+    gap: 24px;
   }
 
-  .About_me_container .About_me .right h1 {
-    font-size: 26px;
+  .left img {
+    max-width: 350px;
   }
 
-  .About_me_container .About_me .right .content p {
-    font-size:16px;
-    line-height: 26px;
-    margin: 0px 10px;
-    text-align: left;
+  .heading h1 {
+    font-size: 40px;
+    text-align: center;
   }
 
-  .About_me_container .About_me .right .education {
-    padding: 10px;
-    border-radius: 10px;
-    margin: 0;
+  .content p {
+    font-size: 17px;
+    text-align: center;
   }
 
-  .About_me_container .About_me .right .education h1 {
+  .education,
+  .exprience {
+    padding: 20px;
+  }
+
+  .education h1,
+  .exprience h1 {
     font-size: 22px;
   }
 
-  .About_me_container .About_me .right .education .items {
-    padding: 0px 20px;
+  .education .items ul li,
+  .exprience .items h3 {
+    font-size: 15px;
   }
 
-  .About_me_container .About_me .right .education .items ul li {
+  .exprience .items h2 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  .About_me_container {
+    padding: 48px 16px;
+  }
+
+  .About_me {
+    gap: 40px;
+  }
+
+  .left img {
+    max-width: 280px;
+  }
+
+  .heading h1 {
+    font-size: 32px;
+  }
+
+  .content p {
     font-size: 16px;
   }
+
+  .right {
+    gap: 20px;
+  }
+
+  .education,
+  .exprience {
+    padding: 18px;
+  }
+
+  .education h1,
+  .exprience h1 {
+    font-size: 20px;
+  }
+
+  .education h1::before,
+  .exprience h1::before {
+    width: 3px;
+    height: 20px;
+  }
+
+  .education .items ul {
+    padding-left: 16px;
+  }
+
+  .education .items ul li {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  .exprience .items h2 {
+    font-size: 16px;
+  }
+
+  .exprience .items h3 {
+    font-size: 14px;
+  }
 }
 
-/* Normal mobile devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .About_me_container {
-        width: 100vw;
-        height: auto;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        padding: 60px 0px 0px 0px;
-        z-index: 1;
-      }
-    
-      .About_me_container .About_me {
-        width:90%;
-        height: auto;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-      }
-      .About_me_container .About_me .left {
-        width: 100vw;
-        height: auto;
-      }
-    
-      .About_me_container .About_me .left img {
-        max-width: 290px;
-        height: auto;
-        position: static;
-        width: 80%;
-      }
-    
-      .About_me_container .About_me .right {
-        width: 95%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-    
-      .About_me_container .About_me .right h1 {
-        font-size: 28px;
-      }
-    
-      .About_me_container .About_me .right .content p {
-        font-size: 20px;
-        line-height: 26px;
-        margin: 0px 10px;
-        text-align: left;
-      }
-    
-      .About_me_container .About_me .right .education {
-        padding: 10px;
-        border-radius: 10px;
-        margin: 0;
-      }
-    
-      .About_me_container .About_me .right .education h1 {
-        font-size: 26px;
-      }
-    
-      .About_me_container .About_me .right .education .items {
-        padding: 0px 20px;
-      }
-    
-      .About_me_container .About_me .right .education .items ul li {
-        font-size: 18px;
-      }
-}
+@media (max-width: 575px) {
+  .About_me {
+    gap: 32px;
+  }
 
-/* Tablets and iPads (portrait and landscape, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .About_me_container {
-        width: 100vw;
-        height: auto;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 0px 0px 0px;
-        z-index: 1;
-      }
-    
-      .About_me_container .About_me {
-        width: 100%;
-        height:100%;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content:flex-start;
-      }
-      .About_me_container .About_me .left {
-        width:40%;
-        height: 100%;
-        position: relative;
-      }
-    
-      .About_me_container .About_me .left img {
-        width:400px;
-        left: -100px;
-        position: absolute;
-      }
-    
-      .About_me_container .About_me .right {
-        width:60%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0px 20px;
-      }
-    
-      .About_me_container .About_me .right h1 {
-        font-size: 28px;
-      }
-    
-      .About_me_container .About_me .right .content p {
-        font-size: 20px;
-        line-height: 29px;
-        margin: 0px 10px;
-        text-align: justify;
-      }
-    
-      .About_me_container .About_me .right .education {
-        padding: 10px;
-        border-radius: 10px;
-        margin: 0;
-      }
-    
-      .About_me_container .About_me .right .education h1 {
-        font-size: 28px;
-      }
-    
-      .About_me_container .About_me .right .education .items {
-        padding: 0px 20px;
-      }
-    
-      .About_me_container .About_me .right .education .items ul li {
-        font-size: 18px;
-      }
-}
+  .left img {
+    max-width: 240px;
+  }
 
-/* Tablets and iPads (landscape, larger than 992px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .About_me_container {
-        width: 100vw;
-        height: auto;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 0px 0px 0px;
-        z-index: 1;
-      }
-    
-      .About_me_container .About_me {
-        width: 100%;
-        height:100%;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content:flex-start;
-      }
-      .About_me_container .About_me .left {
-        width:40%;
-        height: 100%;
-        position: relative;
-      }
-    
-      .About_me_container .About_me .left img {
-        width:400px;
-        left: -100px;
-        position: absolute;
-      }
-    
-      .About_me_container .About_me .right {
-        width:60%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0px 20px;
-      }
-    
-      .About_me_container .About_me .right h1 {
-        font-size: 28px;
-      }
-    
-      .About_me_container .About_me .right .content p {
-        font-size: 20px;
-        line-height: 29px;
-        margin: 0px 10px;
-        text-align: justify;
-      }
-    
-      .About_me_container .About_me .right .education {
-        padding: 10px;
-        border-radius: 10px;
-        margin: 0;
-      }
-    
-      .About_me_container .About_me .right .education h1 {
-        font-size: 28px;
-      }
-    
-      .About_me_container .About_me .right .education .items {
-        padding: 0px 20px;
-      }
-    
-      .About_me_container .About_me .right .education .items ul li {
-        font-size: 18px;
-      }
-}
+  .education,
+  .exprience {
+    padding: 16px;
+  }
 
-/* Laptops and PCs (larger than 1200px) */
-@media (min-width: 1200px) and (max-width: 1439.98px) {
-    .About_me_container {
-        width: 100vw;
-        height: auto;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 0px 0px 0px;
-        z-index: 1;
-      }
-    
-      .About_me_container .About_me {
-        width: 100%;
-        height:100%;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content:flex-start;
-      }
-      .About_me_container .About_me .left {
-        width:40%;
-        height: 100%;
-        position: relative;
-      }
-    
-      .About_me_container .About_me .left img {
-        width:330px;
-        left: 0px;
-        position:static;
-      }
-    
-      .About_me_container .About_me .right {
-        width:60%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0px 20px;
-      }
-    
-      .About_me_container .About_me .right h1 {
-        font-size: 28px;
-      }
-    
-      .About_me_container .About_me .right .content p {
-        font-size: 20px;
-        line-height: 29px;
-        margin: 0px 10px;
-        text-align: justify;
-      }
-    
-      .About_me_container .About_me .right .education {
-        padding: 10px;
-        border-radius: 10px;
-        margin: 0;
-      }
-    
-      .About_me_container .About_me .right .education h1 {
-        font-size: 28px;
-      }
-    
-      .About_me_container .About_me .right .education .items {
-        padding: 0px 20px;
-      }
-    
-      .About_me_container .About_me .right .education .items ul li {
-        font-size: 18px;
-      }
-}
+  .education .items ul {
+    gap: 10px;
+  }
 
-/* Large screens (TVs and larger displays, 1440px and up) */
-@media (min-width: 1440px) {
-  /* Add your styles here */
+  .education .items ul li {
+    font-size: 13px;
+  }
+
+  .exprience .items {
+    padding: 14px 0;
+  }
 }
