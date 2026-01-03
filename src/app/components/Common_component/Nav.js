@@ -43,8 +43,7 @@ const Nav = () => {
   return (
     <>
       <nav
-        className={styles.nav}
-        style={{ background: navColor ? "#046088" : "transparent" }}
+        className={`${styles.nav} ${navColor ? styles.scrolled : ''}`}
       >
         <div className={styles.nav_container}>
           <div className={styles.left}>{/* Optional: Add logo here */}</div>

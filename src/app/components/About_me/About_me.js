@@ -1,27 +1,79 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from './styles/About_me.module.css'
 
 //img
 import about_me_Img from '@/../../public/assets/about/about_me.png'
 
 const About_me = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
   return (
     <section id="about" className={styles.about_section}>
-    <div className={styles.About_me_container} >
-      <div className={styles.About_me}>
-        <div className={styles.left}>
+    <div className={styles.About_me_container}>
+      <motion.div
+        className={styles.About_me}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <motion.div className={styles.left} variants={fadeInLeft}>
           <Image src={about_me_Img} alt="nithieshkumar about" />
-        </div>
-        <div className={styles.right}>
-          <div className={styles.heading}>
+        </motion.div>
+        <motion.div className={styles.right} variants={fadeInRight}>
+          <motion.div className={styles.heading} variants={fadeInUp}>
             <h1>About me</h1>
-          </div>
-          <div className={styles.content}>
+          </motion.div>
+          <motion.div className={styles.content} variants={fadeInUp}>
             <p>
             I am a skilled React Developer with 1 year of experience, specializing in dynamic, responsive web applications. Proficient in React.js, JavaScript (ES6+), HTML5, CSS3, and MySQL, I am also familiar with Python. I have experience building full-stack solutions and optimizing both front-end and back-end performance. Recently, I developed my portfolio using Next.js, showcasing my ability to build fast, SEO-friendly, and scalable applications.
             </p>
-          </div>
-          <div className={styles.education}>
+          </motion.div>
+          <motion.div
+            className={styles.education}
+            variants={fadeInUp}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             <h1>Education</h1>
             <div className={styles.items}>
               <ul>
@@ -37,20 +89,28 @@ const About_me = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className={styles.exprience}>
+          </motion.div>
+          <motion.div className={styles.exprience} variants={fadeInUp}>
             <h1>Experience</h1>
-            <div className={styles.items}>
-            <h2>Web Developer</h2>
-            <h3>Cuckoo images - chennai | 1 Year of Experience</h3>
-          </div>
-            <div className={styles.items}>
-            <h2>Web Developer</h2>
-            <h3>Cloudstier Solutions Private Limited - Tirupattur | Present </h3>
-          </div>
-        </div>
-        </div>
-      </div>
+            <motion.div
+              className={styles.items}
+              whileHover={{ x: 10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h2>Web Developer</h2>
+              <h3>Cuckoo images - chennai | 1 Year of Experience</h3>
+            </motion.div>
+            <motion.div
+              className={styles.items}
+              whileHover={{ x: 10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h2>Web Developer</h2>
+              <h3>Cloudstier Solutions Private Limited - Tirupattur | Present </h3>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
     </section>
   );

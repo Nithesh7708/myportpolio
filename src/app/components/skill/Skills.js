@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./styles/skills.module.css";
 
 
@@ -23,77 +26,129 @@ import postman from "@/../../public/assets/skills/postman.png";
 
 
 const Skills = () => {
-  const frontendSkill = [
+  // Technologies - Programming Languages and Frameworks
+  const technologies = [
     { Img: react, Alt: "React js" },
+    { Img: next, Alt: "Next js" },
+    { Img: js, Alt: "Javascript" },
     { Img: html, Alt: "Html" },
     { Img: css, Alt: "Css" },
-    { Img: js, Alt: "Javascript" },
-    { Img: next, Alt: "Next js" },
-
-  ];
-
-  const backendSkill = [
     { Img: python, Alt: "Python" },
     { Img: Mysql, Alt: "MySQL" },
   ];
 
-  const OtherSkill = [
+  // Tools - Developer Tools
+  const tools = [
     { Img: git, Alt: "Github" },
-    { Img: vscode, Alt: "Vscode" },
-    { Img: postman, Alt: "API Requst" },
+    { Img: vscode, Alt: "VS Code" },
+    { Img: postman, Alt: "Postman" },
   ];
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
     <>
-      <div id="skills" className={styles.skills_container}>
-        <div className={styles.head}>
-          <h1>Skills</h1>
-        </div>
-        <div className={styles.skills}>
-          <div className={styles.heading}>
-            <h1>Frontend:</h1>
-          </div>
-          <div className={styles.lists}>
-            {/*frontEnd Program Languages*/}
-            {frontendSkill.map((items, index) => (
-              <div className={styles.list} key={index}>
-                <Image src={items.Img} alt={items.Alt} />
-              </div>
-            ))}
+      <section id="skills" className={styles.skills_container}>
+        <motion.div
+          className={styles.head}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={headingVariants}
+        >
+          <h1>Technologies and Tools</h1>
+          <p>Powerful tools and frameworks I use to build amazing products</p>
+        </motion.div>
 
-            {/* ---------- */}
-          </div>
-        </div>
-        <div className={styles.skills}>
-          <div className={styles.heading}>
-            <h1>Backend& Database:</h1>
-          </div>
-          <div className={styles.lists}>
-            {/*frontEnd Program Languages*/}
-            {backendSkill.map((items, index) => (
-              <div className={styles.list} key={index}>
-                <Image src={items.Img} alt={items.Alt} />
-              </div>
+        <motion.div
+          className={styles.skills}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          <motion.div className={styles.heading} variants={itemVariants}>
+            <h2>Technologies</h2>
+          </motion.div>
+          <motion.div className={styles.lists} variants={containerVariants}>
+            {technologies.map((items, index) => (
+              <motion.div
+                className={styles.list}
+                key={index}
+                variants={itemVariants}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className={styles.icon_wrapper}>
+                  <Image src={items.Img} alt={items.Alt} />
+                </div>
+                <span>{items.Alt}</span>
+              </motion.div>
             ))}
+          </motion.div>
+        </motion.div>
 
-            {/* ---------- */}
-          </div>
-        </div>
-        <div className={styles.skills}>
-          <div className={styles.heading}>
-            <h1>Code Others:</h1>
-          </div>
-          <div className={styles.lists}>
-            {/*frontEnd Program Languages*/}
-            {OtherSkill.map((items, index) => (
-              <div className={styles.list} key={index} k>
-                <Image src={items.Img} alt={items.Alt} />
-              </div>
+        <motion.div
+          className={styles.skills}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          <motion.div className={styles.heading} variants={itemVariants}>
+            <h2>Tools</h2>
+          </motion.div>
+          <motion.div className={styles.lists} variants={containerVariants}>
+            {tools.map((items, index) => (
+              <motion.div
+                className={styles.list}
+                key={index}
+                variants={itemVariants}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className={styles.icon_wrapper}>
+                  <Image src={items.Img} alt={items.Alt} />
+                </div>
+                <span>{items.Alt}</span>
+              </motion.div>
             ))}
-
-            {/* ---------- */}
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </section>
     </>
   );
 };
