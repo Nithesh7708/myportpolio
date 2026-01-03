@@ -22,34 +22,25 @@
 .About_me {
   width: 100%;
   max-width: 1280px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-/* ========== LEFT SIDE - IMAGE ========== */
-.left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.left img {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-  position: relative;
-}
-
-/* ========== RIGHT SIDE - CONTENT ========== */
-.right {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ========== CONTENT SECTION - TOP CENTER ========== */
+.content_section {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* ========== BOTTOM SECTION - EDUCATION & EXPERIENCE ========== */
+.bottom_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
 }
 
 .heading h1 {
@@ -251,31 +242,20 @@
   }
 
   .About_me {
-    grid-template-columns: 1fr;
     gap: 48px;
   }
 
-  .left {
-    order: 2;
-  }
-
-  .right {
-    order: 1;
-    gap: 24px;
-  }
-
-  .left img {
-    max-width: 350px;
+  .bottom_section {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .heading h1 {
     font-size: 40px;
-    text-align: center;
   }
 
   .content p {
     font-size: 17px;
-    text-align: center;
   }
 
   .education,
@@ -307,8 +287,8 @@
     gap: 40px;
   }
 
-  .left img {
-    max-width: 280px;
+  .bottom_section {
+    gap: 24px;
   }
 
   .heading h1 {
@@ -317,10 +297,6 @@
 
   .content p {
     font-size: 16px;
-  }
-
-  .right {
-    gap: 20px;
   }
 
   .education,
@@ -362,8 +338,8 @@
     gap: 32px;
   }
 
-  .left img {
-    max-width: 240px;
+  .bottom_section {
+    gap: 20px;
   }
 
   .education,

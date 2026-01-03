@@ -1,11 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from './styles/About_me.module.css'
-
-//img
-import about_me_Img from '@/../../public/assets/about/about_me.png'
 
 const About_me = () => {
   const fadeInUp = {
@@ -56,10 +52,7 @@ const About_me = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <motion.div className={styles.left} variants={fadeInLeft}>
-          <Image src={about_me_Img} alt="nithieshkumar about" />
-        </motion.div>
-        <motion.div className={styles.right} variants={fadeInRight}>
+        <motion.div className={styles.content_section} variants={fadeInUp}>
           <motion.div className={styles.heading} variants={fadeInUp}>
             <h1>About me</h1>
           </motion.div>
@@ -68,9 +61,12 @@ const About_me = () => {
             I am a skilled React Developer with 1 year of experience, specializing in dynamic, responsive web applications. Proficient in React.js, JavaScript (ES6+), HTML5, CSS3, and MySQL, I am also familiar with Python. I have experience building full-stack solutions and optimizing both front-end and back-end performance. Recently, I developed my portfolio using Next.js, showcasing my ability to build fast, SEO-friendly, and scalable applications.
             </p>
           </motion.div>
+        </motion.div>
+        
+        <div className={styles.bottom_section}>
           <motion.div
             className={styles.education}
-            variants={fadeInUp}
+            variants={fadeInLeft}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -90,7 +86,8 @@ const About_me = () => {
               </ul>
             </div>
           </motion.div>
-          <motion.div className={styles.exprience} variants={fadeInUp}>
+          
+          <motion.div className={styles.exprience} variants={fadeInRight}>
             <h1>Experience</h1>
             <motion.div
               className={styles.items}
@@ -109,7 +106,7 @@ const About_me = () => {
               <h3>Cloudstier Solutions Private Limited - Tirupattur | Present </h3>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </motion.div>
     </div>
     </section>

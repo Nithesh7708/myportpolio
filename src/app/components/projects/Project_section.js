@@ -95,7 +95,7 @@ const Project_section = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={headingVariants}
         >
-          <h1>Latest Projects</h1>
+          <h1>Projects</h1>
           <p>Showcasing my work in web development and design</p>
         </motion.div>
         <motion.div
