@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./style/project.module.css";
 import { useState } from "react";
 
@@ -14,6 +15,35 @@ import Project_6 from '@/../../public/assets/projects/sempozhil.jpg'
 
 const Project_section = () => {
   const [isOpenMore, setIsOpenMore] = useState(false);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
 
   const projects = [
     {
@@ -56,85 +86,71 @@ const Project_section = () => {
   ];
 
   return (
-    <div className={styles.project_section_container} id="projects">
+    <section className={styles.project_section_container} id="projects">
       <div className={styles.project_section}>
-        <div className={styles.heading}>
-          <h1>
-            Our <span>Latest Project</span>
-          </h1>
-        </div>
-        <div
+        <motion.div
+          className={styles.heading}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={headingVariants}
+        >
+          <h1>Latest Projects</h1>
+          <p>Showcasing my work in web development and design</p>
+        </motion.div>
+        <motion.div
           className={styles.project_list}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={containerVariants}
           style={
             isOpenMore === true
-              ? { flexWrap: "wrap", justifyContent: "center", gap: "30px" }
-              : { padding: "0px 30px", gap: "20px", alignItems: "center" }
+              ? { display: "grid" }
+              : { display: "grid" }
           }
         >
-          {projects.map((items, index) => (
-            <div className={styles.list} key={index}>
+          {projects.slice(0, isOpenMore ? projects.length : 6).map((items, index) => (
+            <motion.div
+              className={styles.list}
+              key={index}
+              variants={cardVariants}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className={styles.img}>
-                <Image src={items.Img} alt="project_1" />
+                <Image src={items.Img} alt={items.Project_Name} />
               </div>
-              <div className={styles.project_name}>
-                <h1>{items.Project_Name}</h1>
+              <div className={styles.content}>
+                <div className={styles.project_name}>
+                  <h2>{items.Project_Name}</h2>
+                </div>
+                <div className={styles.technologys}>
+                  <ul>
+                    {items.Program_Languages.map((language, index) => (
+                      <li key={index}>{language}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={styles.link_info}>
+                  <a href={items.live_link} target="_blank" rel="noopener noreferrer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="bi bi-link-45deg"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                      <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                    </svg>
+                    Live Preview
+                  </a>
+                </div>
               </div>
-              <div className={styles.link_info}>
-                <a href={items.live_link}  target="_black">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="bi bi-link-45deg"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
-                    <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
-                  </svg>
-                  Live Preview
-                </a>
-              </div>
-
-              <div className={styles.technologys}>
-                <ul>
-                  {items.Program_Languages.map((language, index) => (
-                    <li key={index}>{language}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-      <div
-        className={styles.more_btn}
-        onClick={() =>
-          isOpenMore === true ? setIsOpenMore(false) : setIsOpenMore(true)
-        }
-      >
-        {isOpenMore === false ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="bi bi-chevron-bar-down"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708M1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5"
-            />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="bi bi-chevron-bar-up"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3.646 11.854a.5.5 0 0 0 .708 0L8 8.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708M2.4 5.2c0 .22.18.4.4.4h10.4a.4.4 0 0 0 0-.8H2.8a.4.4 0 0 0-.4.4"
-            />
-          </svg>
-        )}
-      </div>
-    </div>
+    </section>
   );
 };
 

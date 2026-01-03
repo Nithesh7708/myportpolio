@@ -35,6 +35,10 @@
   --color-accent-200: #bfdbfe;
   --color-accent-100: #dbeafe;
 
+  /* Alpha Variants */
+  --color-accent-500-alpha-10: rgba(59, 130, 246, 0.1);
+  --color-accent-500-alpha-20: rgba(59, 130, 246, 0.2);
+
   /* Secondary Accent - Emerald Green */
   --color-secondary-900: #064e3b;
   --color-secondary-800: #065f46;
