@@ -54,11 +54,14 @@ const About_me = () => {
       >
         <motion.div className={styles.content_section} variants={fadeInUp}>
           <motion.div className={styles.heading} variants={fadeInUp}>
-            <h1>About me</h1>
+            <h1>Who I Am</h1>
           </motion.div>
           <motion.div className={styles.content} variants={fadeInUp}>
             <p>
-            I am a skilled React Developer with 1 year of experience, specializing in dynamic, responsive web applications. Proficient in React.js, JavaScript (ES6+), HTML5, CSS3, and MySQL, I am also familiar with Python. I have experience building full-stack solutions and optimizing both front-end and back-end performance. Recently, I developed my portfolio using Next.js, showcasing my ability to build fast, SEO-friendly, and scalable applications.
+            Experienced Full-Stack Developer with a proven track record of building dynamic web applications and mobile solutions. I specialize in creating high-performance, user-centric applications using modern JavaScript frameworks and cloud technologies.
+            </p>
+            <p>
+            My expertise spans the full development lifecycle—from architecting scalable backend systems to crafting intuitive frontend experiences. I thrive in collaborative environments and have successfully delivered projects for diverse industries.
             </p>
           </motion.div>
         </motion.div>
@@ -88,22 +91,24 @@ const About_me = () => {
           </motion.div>
           
           <motion.div className={styles.exprience} variants={fadeInRight}>
-            <h1>Experience</h1>
+            <h1>Professional Experience</h1>
             <motion.div
               className={styles.items}
               whileHover={{ x: 10 }}
               transition={{ duration: 0.3 }}
             >
-              <h2>Web Developer</h2>
-              <h3>Cuckoo images - chennai | 1 Year of Experience</h3>
+              <h2>Full-Stack Developer</h2>
+              <h3>Cuckoo Images, Chennai | 1+ Year</h3>
+              <p>Developed responsive web applications using React, integrated backend APIs, and optimized performance for production environments.</p>
             </motion.div>
             <motion.div
               className={styles.items}
               whileHover={{ x: 10 }}
               transition={{ duration: 0.3 }}
             >
-              <h2>Web Developer</h2>
-              <h3>Cloudstier Solutions Private Limited - Tirupattur | Present </h3>
+              <h2>Full-Stack Developer</h2>
+              <h3>Cloudstier Solutions Pvt Ltd, Tirupattur | Present</h3>
+              <p>Building enterprise-level web and mobile applications. Leading frontend development and collaborating on full-stack solutions.</p>
             </motion.div>
           </motion.div>
         </div>

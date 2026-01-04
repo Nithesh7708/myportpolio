@@ -28,18 +28,19 @@ import postman from "@/../../public/assets/skills/postman.png";
 const Skills = () => {
   // Technologies - Programming Languages and Frameworks
   const technologies = [
-    { Img: react, Alt: "React js" },
-    { Img: next, Alt: "Next js" },
-    { Img: js, Alt: "Javascript" },
-    { Img: html, Alt: "Html" },
-    { Img: css, Alt: "Css" },
+    { Img: react, Alt: "React" },
+    { Img: next, Alt: "Next.js" },
+    { Img: js, Alt: "JavaScript" },
+    { Img: html, Alt: "HTML5" },
+    { Img: css, Alt: "CSS3" },
     { Img: python, Alt: "Python" },
     { Img: Mysql, Alt: "MySQL" },
+    // Note: Add Node.js, Express.js, React Native icons when available
   ];
 
   // Tools - Developer Tools
   const tools = [
-    { Img: git, Alt: "Github" },
+    { Img: git, Alt: "Git" },
     { Img: vscode, Alt: "VS Code" },
     { Img: postman, Alt: "Postman" },
   ];
@@ -81,8 +82,8 @@ const Skills = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={headingVariants}
         >
-          <h1>Technologies and Tools</h1>
-          <p>Powerful tools and frameworks I use to build amazing products</p>
+          <h1>Technologies & Expertise</h1>
+          <p>Modern stack I use to build production-grade applications</p>
         </motion.div>
 
         <motion.div

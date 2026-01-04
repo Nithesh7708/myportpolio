@@ -79,8 +79,8 @@ const Footer = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
-          <h2>Let's Connect</h2>
-          <p>Feel free to reach out for collaborations or just a friendly chat</p>
+          <h2>Let's Work Together</h2>
+          <p>Open to full-time opportunities and exciting projects</p>
         </motion.div>
 
         <motion.div

@@ -56,10 +56,12 @@
 
 .name strong {
   display: block;
-  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent-500) 100%);
+  background: linear-gradient(90deg, var(--color-text-primary) 0%, var(--color-accent-500) 50%, var(--color-secondary-500) 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradientShift 4s ease infinite;
 }
 
 .about_me {
@@ -72,6 +74,52 @@
 
 .about_me p {
   margin: 0;
+}
+
+/* ========== CTA BUTTONS ========== */
+.cta_buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.cta_buttons a {
+  text-decoration: none;
+}
+
+.cta_buttons button {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.primary_btn button {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+}
+
+.primary_btn button:hover {
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+.secondary_btn button {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-accent-500);
+}
+
+.secondary_btn button:hover {
+  background: var(--color-accent-500);
+  color: white;
+  transform: translateY(-2px);
 }
 
 /* ========== RIGHT CONTENT - PROFILE ========== */
@@ -240,6 +288,10 @@
     max-width: 100%;
   }
 
+  .cta_buttons {
+    justify-content: center;
+  }
+
   .profile {
     max-width: 380px;
   }
@@ -265,6 +317,11 @@
 
   .about_me {
     font-size: 16px;
+  }
+
+  .cta_buttons button {
+    padding: 12px 24px;
+    font-size: 15px;
   }
 
   .profile {

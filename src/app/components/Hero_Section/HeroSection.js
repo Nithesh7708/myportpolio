@@ -88,15 +88,35 @@ const HeroSection = () => {
           {/* left side design */}
           <motion.div className={styles.left} variants={fadeInLeft}>
             <motion.div className={styles.sub_heading} variants={fadeInUp}>
-              <strong>Freelance Web Developer</strong>
+              <strong>Full-Stack Developer</strong>
             </motion.div>
             <motion.div className={styles.name} variants={fadeInUp}>
               <strong>Nithiesh Kumar</strong>
             </motion.div>
             <motion.div className={styles.about_me} variants={fadeInUp}>
               <p>
-              I have a strong interest in the IT field and specialize in building dynamic, responsive websites and applications. With experience in various web technologies, I focus on delivering high-quality, user-friendly solutions. Recently, I developed my portfolio using Next.js, showcasing my expertise in creating fast, scalable, and SEO-friendly web applications.
+              Building scalable web and mobile applications with modern technologies. Specialized in React, Next.js, Node.js, and React Native. Transforming ideas into production-ready solutions for startups and growing companies.
               </p>
+            </motion.div>
+            <motion.div className={styles.cta_buttons} variants={fadeInUp}>
+              <a href="#projects" className={styles.primary_btn}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  View Projects
+                </motion.button>
+              </a>
+              <a href="#contactus" className={styles.secondary_btn}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Hire Me
+                </motion.button>
+              </a>
             </motion.div>
           </motion.div>
           {/* right side design */}
@@ -107,7 +127,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image src={myself_img} alt="nithiesh kumar freelancer" priority />
+              <Image src={myself_img} alt="nithiesh kumar full-stack developer" priority />
               <div className={styles.programming}>
                 <motion.div
                   className={styles.list}

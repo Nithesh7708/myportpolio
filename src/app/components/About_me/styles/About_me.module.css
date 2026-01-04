@@ -59,7 +59,11 @@
   font-size: 18px;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin: 0;
+  margin: 0 0 16px 0;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
 }
 
 /* ========== EDUCATION CARD ========== */
@@ -228,8 +232,15 @@
   color: var(--color-text-secondary);
   font-size: 15px;
   font-weight: 400;
-  margin: 0;
+  margin: 0 0 8px 0;
   line-height: 1.6;
+}
+
+.exprience .items p {
+  color: var(--color-text-tertiary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ========================================

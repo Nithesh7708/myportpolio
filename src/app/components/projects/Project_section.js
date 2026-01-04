@@ -48,41 +48,47 @@ const Project_section = () => {
   const projects = [
     {
       Img: Project_1,
-      Project_Name: "keeladi archaeological site",
+      Project_Name: "Keeladi Archaeological Museum",
       live_link: "https://keeladimuseum.tn.gov.in/",
-      Program_Languages: ["React,","SEO,","Redux,","Responsive,","optimization."],
+      Program_Languages: ["React", "Redux", "SEO", "Performance Optimization"],
+      description: "Government museum website with dynamic content management"
     },
     {
       Img: Project_2,
-      Project_Name: "Expert Solutions for Your Business",
+      Project_Name: "Cuckoo Images - Business Solutions Platform",
       live_link: "https://cuckooimages.in/",
-      Program_Languages: ["React,","SEO,",'Php',"SQL,","Responsive,","optimization"]
+      Program_Languages: ["React", "PHP", "MySQL", "SEO"],
+      description: "Full-stack business platform with custom CMS"
     },
     {
       Img: Project_3,
-      Project_Name: "Explore the World of Drawing",
+      Project_Name: "Kaarunyabharathi Arts - Digital Gallery",
       live_link: "https://kaarunyabharathiarts.com/",
-      Program_Languages: ["React,","SEO,","php,","Responsive,","optimization."],
+      Program_Languages: ["React", "PHP", "SEO", "Responsive Design"],
+      description: "Interactive art gallery showcasing creative works"
     },
     {
       Img: Project_4,
-      Project_Name: "Healing Through the Five Elements",
+      Project_Name: "5 Elements - Healing & Wellness Platform",
       live_link: "https://5elements.cuckoostock.com/",
-      Program_Languages: ["html,","css,","js,","Responsive."],
+      Program_Languages: ["HTML5", "CSS3", "JavaScript", "Responsive"],
+      description: "Modern wellness platform with holistic healing approach"
     },
     {
       Img: Project_5,
-      Project_Name: "Innovative VFX Solutions for the Digital Age",
+      Project_Name: "Pixl VFX - Visual Effects Studio",
       live_link: "https://pixlvfx.com/",
-      Program_Languages: ["React,","SEO,","Responsive,","optimization."],
+      Program_Languages: ["React", "SEO", "Performance Optimization"],
+      description: "Creative agency website with stunning visual effects"
     },
     {
       Img: Project_6,
-      Project_Name: "A Celebration of Tradition and Culture",
+      Project_Name: "Sempozhil - Cultural Heritage Website",
       live_link: "https://sempozhil.org/",
-      Program_Languages: ["html,","css,","js,","Responsive."],
+      Program_Languages: ["HTML5", "CSS3", "JavaScript", "Responsive"],
+      description: "Traditional culture and heritage preservation platform"
     },
- 
+
   ];
 
   return (
@@ -95,8 +101,8 @@ const Project_section = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={headingVariants}
         >
-          <h1>Projects</h1>
-          <p>Showcasing my work in web development and design</p>
+          <h1>Featured Projects</h1>
+          <p>Real-world applications I've built for clients and organizations</p>
         </motion.div>
         <motion.div
           className={styles.project_list}

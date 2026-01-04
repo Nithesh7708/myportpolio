@@ -83,7 +83,7 @@ const Nav = () => {
               download
             >
               <div className={styles.resume}>
-                <button>Resume in your hands</button>
+                <button>Download Resume</button>
               </div>
             </a>
 
